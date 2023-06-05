@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'org.springframework'
+version '5.1.21.BUILD-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    compile(project(":spring-context"))
+    // https://mvnrepository.com/artifact/org.projectlombok/lombok
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.28'
+
+}
+
+test {
+    useJUnitPlatform()
+}
